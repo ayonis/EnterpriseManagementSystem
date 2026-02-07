@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/AuthenticationModule/">
+    <Project Path="AuthenticationModule.Api/AuthenticationModule.Api.csproj" Id="d6b3c44d-acf1-45ea-8a55-07372d3a1200" />
+    <Project Path="AuthenticationModule.Application/AuthenticationModule.Application.csproj" Id="247a105b-5368-4b3f-8cb8-90f09374f471" />
+    <Project Path="AuthenticationModule.Domain/AuthenticationModule.Domain.csproj" Id="8dfc9e10-cd81-4ddb-9a20-84555f3b585f" />
+    <Project Path="AuthenticationModule.Infrastructure/AuthenticationModule.Infrastructure.csproj" Id="5e373f15-761e-439c-a47e-972bd7186e5d" />
+  </Folder>
+  <Project Path="EnterpriseManagementSystem.Api/EnterpriseManagementSystem.Api.csproj" />
+  <Project Path="EnterpriseManagementSystem.Application/EnterpriseManagementSystem.Application.csproj" />
+  <Project Path="EnterpriseManagementSystem.Domain/EnterpriseManagementSystem.Domain.csproj" />
+  <Project Path="EnterpriseManagementSystem.Infrastructure/EnterpriseManagementSystem.Infrastructure.csproj" />
+</Solution>

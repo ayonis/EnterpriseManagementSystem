@@ -1,0 +1,145 @@
+### Employee CRUD Operations Test File
+### Use this file to test the Employee API endpoints
+
+@baseUrl = https://localhost:7001
+@contentType = application/json
+
+### 1. Get all employees (paginated)
+GET {{baseUrl}}/api/employees?pageNumber=1&pageSize=10
+Accept: {{contentType}}
+
+### 2. Search employees by name
+GET {{baseUrl}}/api/employees/search?searchTerm=john
+Accept: {{contentType}}
+
+### 3. Search employees by department
+GET {{baseUrl}}/api/employees/search?department=IT
+Accept: {{contentType}}
+
+### 4. Search with combined filters
+GET {{baseUrl}}/api/employees/search?searchTerm=engineer&department=IT&pageSize=20
+Accept: {{contentType}}
+
+### 5. Get employee by ID
+GET {{baseUrl}}/api/employees/1
+Accept: {{contentType}}
+
+### 6. Check if employee exists
+GET {{baseUrl}}/api/employees/1/exists
+Accept: {{contentType}}
+
+### 7. Create new employee
+POST {{baseUrl}}/api/employees
+Content-Type: {{contentType}}
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "phoneNumber": "+1234567890",
+  "department": "IT",
+  "position": "Software Engineer",
+  "hireDate": "2024-02-01T00:00:00Z"
+}
+
+### 8. Create another employee
+POST {{baseUrl}}/api/employees
+Content-Type: {{contentType}}
+
+{
+  "firstName": "Jane",
+  "lastName": "Smith",
+  "email": "jane.smith@example.com",
+  "phoneNumber": "+9876543210",
+  "department": "HR",
+  "position": "HR Manager",
+  "hireDate": "2024-01-15T00:00:00Z"
+}
+
+### 9. Create employee with minimal data
+POST {{baseUrl}}/api/employees
+Content-Type: {{contentType}}
+
+{
+  "firstName": "Bob",
+  "lastName": "Johnson"
+}
+
+### 10. Update employee (replace ID with actual ID from create response)
+PUT {{baseUrl}}/api/employees/1
+Content-Type: {{contentType}}
+
+{
+  "id": 1,
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe.updated@example.com",
+  "phoneNumber": "+1234567890",
+  "department": "IT",
+  "position": "Senior Software Engineer",
+  "hireDate": "2024-01-15T00:00:00Z"
+}
+
+### 11. Update with invalid ID mismatch (should return 400)
+PUT {{baseUrl}}/api/employees/1
+Content-Type: {{contentType}}
+
+{
+  "id": 2,
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com"
+}
+
+### 12. Delete employee (replace ID with actual ID)
+DELETE {{baseUrl}}/api/employees/1
+Accept: {{contentType}}
+
+### 13. Try to get deleted employee (should return 404)
+GET {{baseUrl}}/api/employees/1
+Accept: {{contentType}}
+
+### 14. Create employee with invalid email (should return 400)
+POST {{baseUrl}}/api/employees
+Content-Type: {{contentType}}
+
+{
+  "firstName": "Test",
+  "lastName": "User",
+  "email": "invalid-email"
+}
+
+### 15. Create employee without required fields (should return 400)
+POST {{baseUrl}}/api/employees
+Content-Type: {{contentType}}
+
+{
+  "email": "test@example.com"
+}
+
+### 16. Pagination - First page
+GET {{baseUrl}}/api/employees?pageNumber=1&pageSize=5
+Accept: {{contentType}}
+
+### 17. Pagination - Second page
+GET {{baseUrl}}/api/employees?pageNumber=2&pageSize=5
+Accept: {{contentType}}
+
+### 18. Get non-existent employee (should return 404)
+GET {{baseUrl}}/api/employees/99999
+Accept: {{contentType}}
+
+### 19. Delete non-existent employee (should return 404)
+DELETE {{baseUrl}}/api/employees/99999
+Accept: {{contentType}}
+
+### 20. Update non-existent employee (should return 404)
+PUT {{baseUrl}}/api/employees/99999
+Content-Type: {{contentType}}
+
+{
+  "id": 99999,
+  "firstName": "Non",
+  "lastName": "Existent",
+  "email": "nonexistent@example.com"
+}
