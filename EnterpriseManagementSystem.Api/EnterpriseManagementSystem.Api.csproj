@@ -25,8 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DigitalExcellenceHub.Application\EnterpriseManagementSystem.Application.csproj" />
-    <ProjectReference Include="..\DigitalExcellenceHub.Infrastructure\DigitalExcellenceHub.Infrastructure.csproj" />
     <ProjectReference Include="..\AuthenticationModule.Application\AuthenticationModule.Application.csproj" />
     <ProjectReference Include="..\AuthenticationModule.Infrastructure\AuthenticationModule.Infrastructure.csproj" />
     <ProjectReference Include="..\EnterpriseManagementSystem.Application\EnterpriseManagementSystem.Application.csproj" />

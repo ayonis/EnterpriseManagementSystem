@@ -21,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DigitalExcellenceHub.Domain\EnterpriseManagementSystem.Domain.csproj" />
     <ProjectReference Include="..\EnterpriseManagementSystem.Domain\EnterpriseManagementSystem.Domain.csproj" />
   </ItemGroup>
 

@@ -27,8 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DigitalExcellenceHub.Application\EnterpriseManagementSystem.Application.csproj" />
-    <ProjectReference Include="..\DigitalExcellenceHub.Domain\EnterpriseManagementSystem.Domain.csproj" />
     <ProjectReference Include="..\EnterpriseManagementSystem.Application\EnterpriseManagementSystem.Application.csproj" />
     <ProjectReference Include="..\EnterpriseManagementSystem.Domain\EnterpriseManagementSystem.Domain.csproj" />
   </ItemGroup>
